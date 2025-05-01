@@ -167,8 +167,14 @@
     <Compile Include="Clases\Asignatura.cs" />
     <Compile Include="Clases\Calificacion.cs" />
     <Compile Include="Clases\Horario.cs" />
+    <Compile Include="Clases\Tarea.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controllers\ApuntesController.cs" />
+    <Compile Include="Controllers\AsignaturasController.cs" />
+    <Compile Include="Controllers\CalificacionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HorariosController.cs" />
+    <Compile Include="Controllers\TareasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

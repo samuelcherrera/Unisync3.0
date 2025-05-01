@@ -9,6 +9,7 @@
 
 namespace Unisync.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -25,7 +26,9 @@ namespace Unisync.Models
         public string CORREO { get; set; }
         public string CONTRASENA { get; set; }
         public bool ROL { get; set; }
-    
+
+        [JsonIgnore]
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ASIGNATURA> ASIGNATURAs { get; set; }
     }
