@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Crear Asignatura</title>
+    <link rel="stylesheet" href="styles/asignaturas.css">
+
     <script src="../Scripts/Custom/asignaturas.js" defer></script>
 </head>
 <body>
     <h2>Registrar nueva asignatura</h2>
     <form id="formAsignatura">
-        <label>Nombre:</label><br>
-        <input type="text" id="nombre" required><br><br>
 
-        <label>Docente:</label><br>
-        <input type="text" id="docente" required><br><br>
+        <input type="text" id="nombre" placeholder="Nombre"required><br><br>
 
-        <label>Aula:</label><br>
-        <input type="text" id="aula" required><br><br>
+        <input type="text" id="docente"placeholder="Docente" required><br><br>
+
+        <input type="text" id="aula" placeholder="Aula"required><br><br>
 
         <button type="submit">Guardar</button>
     </form>

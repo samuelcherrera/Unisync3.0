@@ -1,66 +1,185 @@
-﻿<!DOCTYPE html >
-<html lang="es" >
-<head >
-<meta charset="UTF-8" / >
-<meta name="viewport" content="width=device-width, initial-scale=1.0" / >
-<title > UniSync</title >
-<link rel="stylesheet" href="styles/iniciar.css" / >
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" >
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" > </script >
-</head >
-<body >
-<header >
-<div class="logo" >
-<img src="img/image (1).png" alt="Logo" / >
-<span > UniSync</span >
-</div >
-<nav >
-<a href="#" > CONTACTANOS</a >
-<a href="#" > ACERCA DE NOSOTROS</a >
-<a href="#" > REGRESAR</a >
-<a href="#" > FUNCIONES</a >
-<a href="#" > ASIGNATURAS</a >
-<button class="login-button" >
-<i data-lucide="user-plus" class="login-icon" > </i >
-LOGIN
-</button >
-</nav >
-</header >
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 
-<main >
-<h1 > ¡AUMENTA TU PRODUCTIVIDAD AL MAXIMO!</h1 >
-<p class="subtitulo" > Con UniSync podrás llevar tu productividad a otro nivel.</p >
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
 
-<section class="cards" >
-<div class="card" >
-<img class="icono" src="img/icono-horario.png" alt="Icono Horario" / >
-<h2 > Horario</h2 >
-<p > Gestiona tu horario.</p >
-<img class="fondo" src="img/fondo-horario.png" alt="Fondo horario" / >
-</div >
-<div class="card" >
-<img class="icono" src="img/icono-tareas.png" alt="Icono Tareas" / >
-<h2 > Tareas</h2 >
-<p > Gestiona tus tareas con nuestra ayuda.</p >
-<img class="fondo" src="img/fondo-tareas.png" alt="Fondo tareas" / >
-</div >
-<div class="card" >
-<img class="icono" src="img/icono-calificaciones.png" alt="Icono Calificaciones" / >
-<h2 > Calificaciones</h2 >
-<p > Consulta tus notas.</p >
-<img class="fondo" src="img/fondo-calificaciones.png" alt="Fondo calificaciones" / >
-</div >
-<div class="card" >
-<img class="icono" src="img/icono-apuntes.png" alt="Icono Apuntes" / >
-<h2 > Apuntes</h2 >
-<p > Guarda tus notas de clase.</p >
-<img class="fondo" src="img/fondo-apuntes.png" alt="Fondo apuntes" / >
-</div >
-</section >
-</main >
-<!-- Lucide Icons Script -->
-<script >
-lucide.createIcons();
-</script >
-</body >
-</html >
+body {
+    background: #fff;
+    color: #000;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #00e5f9;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+    .logo img {
+        height: 55px;
+        margin-right: 15px;
+    }
+
+    .logo span {
+        font-weight: bold;
+        font-size: 30px;
+        color: #fff;
+    }
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+    nav a {
+        color: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+.login-button {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 25px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    color: #00c3da;
+    gap: 10px;
+}
+
+.login-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Contenedor principal centrado */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+    /* Título principal */
+    main h1 {
+        font-size: 36px;
+        font-weight: 900;
+        color: #000;
+    }
+
+.subtitulo {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 400;
+}
+
+/* Sección de Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+    padding-bottom: 60px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 24px;
+    width: 260px;
+    height: 370px;
+    box-shadow: 0 8px 12px rgba(0, 229, 249, 0.4);
+    padding: 24px 20px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 14px 22px rgba(0, 229, 249, 0.5);
+    }
+
+    .card .icono {
+        height: 50px;
+        margin-bottom: 16px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #000;
+    }
+
+    .card p {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 40px;
+    }
+
+    .card .fondo {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+        height: auto;
+        border-radius: 0 0 24px 24px;
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        height: auto;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .cards {
+        gap: 30px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    main h1 {
+        font-size: 30px;
+    }
+
+    .subtitulo {
+        font-size: 18px;
+    }
+}

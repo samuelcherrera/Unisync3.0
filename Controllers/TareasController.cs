@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Unisync.Clases;
 
 namespace Super.Controllers
 
@@ -20,64 +21,64 @@ namespace Super.Controllers
         //LUEGO SE DEFINE LA RUTA DEL MOTODO CON Route
         [Route("ConsultarTodos")]
         //FINALMENTE SE DEFINE EL METODO QUE SE VA A EJECUTAR
-        public List<USUARIO> ConsultarTodos()
+        public List<TAREA> ConsultarTodos()
         {
             //SE CREA UN OBJETO DE LA clsEmpleado
-            Usuario usuario = new Usuario();
+            Tarea tarea = new Tarea();
 
             //SE LLAMA AL METODO ConsultarTodos DE LA CLASE clsEmpleado
-            return usuario.ConsultarTodos();
+            return tarea.ConsultarTodos();
         }
 
 
         [HttpGet]
         [Route("ConsultarXCorreo")]
-        public USUARIO ConsultarXCorreo(String correo)
+        public TAREA ConsultarXCorreo(int id)
         {
-            Usuario usuario = new Usuario();
-            return usuario.ConsultarXCorreo(correo);
+            Tarea tarea = new Tarea();
+            return tarea.Consultar(id);
         }
 
 
         [HttpPost]
         [Route("Insertar")]
-        public string Insertar([FromBody] USUARIO usuario)
+        public string Insertar([FromBody] TAREA tarea)
         {
-            Usuario Usuario = new Usuario();
+            Tarea Tarea = new Tarea();
 
             //SE LE ASIGNA EL OBJETO empleado AL OBJETO empleado DE LA CLASE clsEmpleado 
-            Usuario.usuario = usuario;
+            Tarea.tarea = tarea;
 
-            return Usuario.Insertar();
+            return Tarea.Insertar();
         }
 
 
         [HttpPut]
         [Route("Actualizar")]
-        public string Actualizar([FromBody] USUARIO usuario)
+        public string Actualizar([FromBody] TAREA tarea)
         {
-            Usuario Usuario = new Usuario();
-            Usuario.usuario = usuario;
-            return Usuario.Actualizar();
+            Tarea Tarea = new Tarea();
+            Tarea.tarea = tarea;
+            return Tarea.Actualizar();
         }
 
 
         [HttpDelete]
         [Route("Eliminar")]
-        public string Eliminar([FromBody] USUARIO usuario)
+        public string Eliminar([FromBody] TAREA tarea)
         {
-            Usuario Usuario = new Usuario();
-            Usuario.usuario = usuario;
-            return Usuario.Eliminar();
+            Tarea Tarea = new Tarea();
+            Tarea.tarea = tarea;
+            return Tarea.Eliminar();
         }
 
 
         [HttpDelete]
         [Route("EliminarXCorreo")]
-        public string EliminarXDocumento(string correo)
+        public string EliminarXDocumento(int id)
         {
-            Usuario Usuario = new Usuario();
-            return Usuario.EliminarXCorreo(correo);
+            Tarea Tarea = new Tarea();
+            return Tarea.EliminarXDocumento(id);
         }
 
 
