@@ -1,0 +1,184 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #F5F1F1;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Esferas de fondo */
+.background-circle {
+    position: absolute;
+    background: linear-gradient(135deg, #00E0E8, #33C3DA);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Esfera grande arriba izquierda */
+.circle1 {
+    width: 80vmax;
+    height: 80vmax;
+    top: -40vmax;
+    left: -40vmax;
+    border-bottom-right-radius: 80vmax;
+    background: linear-gradient(135deg, #33C3DA, #66F0F5);
+}
+
+/* Esfera pequeña abajo derecha */
+.circle2 {
+    width: 30vmax;
+    height: 30vmax;
+    bottom: -15vmax;
+    right: -15vmax;
+    border-top-left-radius: 30vmax;
+    background: linear-gradient(135deg, #00E0E8, #33C3DA);
+}
+
+/* Contenedor principal */
+.container {
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    width: 900px;
+    height: 500px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Formulario */
+.formulario {
+    width: 50%;
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    /* Títulos */
+    .formulario h2 {
+        font-size: 20px;
+        color: #00C3DA;
+        margin-bottom: 10px;
+    }
+
+.subtexto {
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Inputs */
+.input-group {
+    position: relative;
+    margin: 3px auto; /* Menos espacio entre campos */
+    width: 90%;
+    max-width: 280px;
+}
+
+    .input-group i {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        color: #00C3DA;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 8px 10px 8px 40px;
+        border: 1px solid #00C3DA;
+        border-radius: 20px;
+        font-size: 16px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+/* Inputs y botón */
+.formulario input,
+.formulario button {
+    width: 100%;
+    max-width: 280px;
+    padding: 8px;
+    margin: 5px auto;
+    display: block;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Botón */
+.formulario button {
+    background: #00E0E8;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .formulario button:hover {
+        background: #00C0C8;
+    }
+
+/* Textos pequeños */
+.signup, .or, .google-login {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+    .signup a {
+        color: #00C3DA;
+        text-decoration: none;
+    }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+/* Info lado derecho */
+.info {
+    width: 50%;
+    background: linear-gradient(135deg, #00E0E8, #33C3DA);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+    .info h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .info p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+/* Responsive */
+@media (max-width: 950px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .info, .formulario {
+        width: 100%;
+        height: auto;
+    }
+}

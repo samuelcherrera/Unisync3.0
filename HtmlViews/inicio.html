@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | UniSync</title>
+    <link rel="stylesheet" href="Styles/Inicio.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <button class="nav-button on-click="asignaturas.hthml">iniciar</button>
+            <a href="register.html">registrate</a>
+            <a href="#">acerca de nosotros</a>
+            <a href="#">contactanos</a>
+        </nav>
+        <button class="login-button" id="loginButton">
+            <i data-lucide="user-plus" class="login-icon"></i>
+            LOGIN
+        </button>
+    </header>
+
+    <main class="main">
+        <section class="left-section">
+            <h1>BIENVENIDO</h1>
+            <p>
+                Simplifica tu vida académica con una herramienta diseñada para organizar horarios, tareas,
+                calificaciones y apuntes en un solo lugar, ayudándote a reducir el estrés y mejorar tu rendimiento.
+                Creada para estudiantes universitarios, nuestra plataforma te permite gestionar fácilmente tu información
+                académica con una interfaz intuitiva y accesible. Organiza tu día a día con gestión de horarios, control
+                de tareas, seguimiento de calificaciones y un sistema de apuntes digital para optimizar tu estudio.
+            </p>
+            <button class="saber-mas-button">saber mas --&gt;</button>
+
+            <div class="icons">
+                <img src="assets/icon1.png" alt="Icono 1">
+                <img src="assets/icon2.png" alt="Icono 2">
+                <img src="assets/icon3.png" alt="Icono 3">
+                <img src="assets/icon4.png" alt="Icono 4">
+            </div>
+        </section>
+
+        <section class="right-section-container">
+            <div class="right-section"></div>
+        </section>
+
+        <div class="right-section-content">
+            <h2>¡BIENVENIDO A UNISYNC!</h2>
+            <img src="logo.png" alt="Logo Unisync" class="logo">
+        </div>
+    </main>
+
+    <script>lucide.createIcons();</script>
+    <script>
+        // Asegúrate de que el DOM esté completamente cargado
+        document.addEventListener("DOMContentLoaded", () => {
+            const loginButton = document.getElementById("loginButton");
+
+            loginButton.addEventListener("click", () => {
+                // Redirige a la página de Login
+                window.location.href = "Login.html";
+            });
+        });
+    </script>
+</body>
+</htm>

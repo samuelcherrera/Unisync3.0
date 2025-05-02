@@ -238,6 +238,28 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="HtmlViews\asignaturas.html" />
+    <Content Include="HtmlViews\img\calendario.png" />
+    <Content Include="HtmlViews\img\calificacion-de-estrellas.png" />
+    <Content Include="HtmlViews\img\correo-electronico.png" />
+    <Content Include="HtmlViews\img\image %281%29.png" />
+    <Content Include="HtmlViews\img\image.png" />
+    <Content Include="HtmlViews\img\instagram.png" />
+    <Content Include="HtmlViews\img\medios-de-comunicacion-social.png" />
+    <Content Include="HtmlViews\img\notas-adhesivas.png" />
+    <Content Include="HtmlViews\img\ocupaciones %281%29.png" />
+    <Content Include="HtmlViews\img\whatsapp %281%29.png" />
+    <Content Include="HtmlViews\Iniciar.html" />
+    <Content Include="HtmlViews\inicio.html" />
+    <Content Include="HtmlViews\Login.html" />
+    <Content Include="HtmlViews\nosotros.html" />
+    <Content Include="HtmlViews\Styles\asignaturas.css" />
+    <Content Include="HtmlViews\Styles\Iniciar.css" />
+    <Content Include="HtmlViews\Styles\Inicio.css" />
+    <Content Include="HtmlViews\Styles\Login.css" />
+    <Content Include="HtmlViews\Styles\nosotros.css" />
+    <Content Include="HtmlViews\Styles\register.css" />
+    <Content Include="HtmlViews\register.html" />
     <Content Include="Models\UniSyncModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UniSyncModel.edmx</DependentUpon>
@@ -281,11 +303,15 @@
       <DependentUpon>UniSyncModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\custom\asignaturas.js" />
+    <Content Include="Scripts\custom\Login.js" />
+    <Content Include="Scripts\custom\register.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="styles\Inicio.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
