@@ -272,6 +272,7 @@
     <Content Include="HtmlViews\Styles\saberMas.css" />
     <Content Include="HtmlViews\Styles\register.css" />
     <Content Include="HtmlViews\register.html" />
+    <Content Include="HtmlViews\tareas.html" />
     <Content Include="Models\UniSyncModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UniSyncModel.edmx</DependentUpon>
@@ -316,7 +317,6 @@
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\custom\asignaturas.js" />
-    <Content Include="Scripts\custom\Calificaciones.js" />
     <Content Include="Scripts\custom\Login.js" />
     <Content Include="Scripts\custom\register.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />

@@ -104,6 +104,8 @@
         </div>
     </div>
     <script>
+        //localStorage.removeItem("notas");
+
         let notasGuardadas = JSON.parse(localStorage.getItem("notas")) || [];
 
         document.querySelectorAll(".action-buttons .btn")[0].addEventListener("click", function () {
