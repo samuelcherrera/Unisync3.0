@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro | UniSync</title>
     <link rel="stylesheet" href="styles/register.css">
-    <script src="../Scripts/Custom/register.js"></script>
-
+    <!-- Usa defer para que el script espere al DOM completo -->
+    <script src="../Scripts/Custom/register.js" defer></script>
 </head>
 <body>
-
     <div class="background-circle circle1"></div>
     <div class="background-circle circle2"></div>
 
@@ -26,17 +25,23 @@
 
         <div class="formulario">
             <h2>Crea tu cuenta y lleva tu estudio al siguiente nivel</h2>
-            <form>
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Correo" required>
-                <input type="password" placeholder="Contraseña" required>
+
+            <!-- 1) Añadimos id="formUsuario" -->
+            <form id="formUsuario">
+                <!-- 2) Cada input recibe su propio id -->
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="email" id="correo" placeholder="Correo" required>
+                <input type="password" id="contrasena" placeholder="Contraseña" required>
                 <button type="submit">CREAR CUENTA</button>
             </form>
+
+            <!-- 3) Contenedor donde mostramos mensajes -->
+            <div id="mensaje"></div>
+
             <a href="#">¿Tienes problemas para crear tu cuenta?</a>
             <p class="or">OR</p>
             <p class="google-text">continuar con google...</p>
         </div>
     </div>
-
 </body>
 </html>

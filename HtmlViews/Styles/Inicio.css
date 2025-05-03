@@ -111,11 +111,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
     .icons img {
-        width: 100px;
+        width: 60px;
     }
 
 /* Right Section Container */

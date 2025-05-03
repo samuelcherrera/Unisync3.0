@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asignaturas</title>
+    <link rel="stylesheet" href="styles/asignatura.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/image (1).png" alt="Logo" class="logo-icon">
+            <span class="logo-text">UniSync</span>
+        </div>
+        <div class="user-icon">
+            <i class="fa-regular fa-user"></i>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="asignaturas-box">
+            <div class="top-bar">
+                <button class="add-btn" id="openModalBtn">AGREGAR ASIGNATURA</button>
+                <button class="star-btn"><i class="fa-regular fa-star"></i></button>
+            </div>
+
+            <div class="asignatura-list" id="asignaturaList"></div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close-btn">&times;</span>
+            <h2>Crear Asignatura</h2>
+            <form id="asignaturaForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required />
+                <label for="docente">Docente:</label>
+                <input type="text" id="docente" name="docente" required />
+                <label for="aula">Aula:</label>
+                <input type="text" id="aula" name="aula" required />
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../Scripts/custom/asignaturas.js"></script>
+</body>
+</html>

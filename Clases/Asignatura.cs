@@ -13,19 +13,42 @@ namespace Unisync.Clases
 
         public ASIGNATURA asignatura { get; set; } // objeto de la clase USUARIO que permite manipular los datos del usuario
 
-        public String Insertar()
+        /* public String Insertar()
+         {
+             try
+             {
+                 DBUniSync.ASIGNATURAs.Add(asignatura); // agg un nuevo empleado a la tabla EMPLEADO (INSERT)
+                 DBUniSync.SaveChanges(); // guarda los cambios en la base de datos
+                 return "Asignatura ingresado correctamente " + asignatura.NOMBRE;
+             }
+             catch (Exception ex)
+             {
+                 return "error al insertar la Asignatura " + ex.Message;
+             }
+
+         }
+        */
+        public String Insertar(int usuarioId) // Recibimos el ID del usuario para asociarlo
         {
             try
             {
-                DBUniSync.ASIGNATURAs.Add(asignatura); // agg un nuevo empleado a la tabla EMPLEADO (INSERT)
-                DBUniSync.SaveChanges(); // guarda los cambios en la base de datos
-                return "Asignatura ingresado correctamente " + asignatura.NOMBRE;
+                // Buscar el usuario por su ID
+                var usuario = DBUniSync.USUARIOs.FirstOrDefault(u => u.ID_USUARIO == usuarioId);
+                if (usuario == null)
+                {
+                    return "Usuario no encontrado.";
+                }
+
+                // Asociar la asignatura al usuario
+                asignatura.USUARIOs.Add(usuario); // Agregar el usuario a la asignatura
+                DBUniSync.ASIGNATURAs.Add(asignatura);
+                DBUniSync.SaveChanges();
+                return "Asignatura ingresada correctamente: " + asignatura.NOMBRE;
             }
             catch (Exception ex)
             {
-                return "error al insertar la Asignatura " + ex.Message;
+                return "Error al insertar la Asignatura: " + ex.Message;
             }
-
         }
 
         public String Actualizar()
@@ -100,6 +123,34 @@ namespace Unisync.Clases
             }
 
 
+        }
+        public string InsertarConUsuario(int userId)
+        {
+            using (var tx = DBUniSync.Database.BeginTransaction())
+            {
+                try
+                {
+                    // 1) Insertar la asignatura
+                    DBUniSync.ASIGNATURAs.Add(asignatura);
+                    DBUniSync.SaveChanges();
+
+                    // 2) Asociar al usuario
+                    var usuario = DBUniSync.USUARIOs.Find(userId);
+                    if (usuario == null)
+                        return $"Usuario con ID {userId} no encontrado.";
+
+                    usuario.ASIGNATURAs.Add(asignatura);
+                    DBUniSync.SaveChanges();
+
+                    tx.Commit();
+                    return asignatura.ID_ASIGNATURA.ToString();  // devolvemos el nuevo ID
+                }
+                catch (Exception ex)
+                {
+                    tx.Rollback();
+                    return "ERROR: " + ex.Message;
+                }
+            }
         }
     }
 

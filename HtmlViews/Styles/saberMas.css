@@ -1,0 +1,164 @@
+﻿/* === Reseteo Básico === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === Estilos del Body === */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #00e4ff, #00cfff); /* Gradiente azul */
+    color: #333; /* Color de texto por defecto */
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la pantalla */
+    overflow-x: hidden; /* Previene scroll horizontal */
+    position: relative; /* Necesario para el posicionamiento absoluto del contenedor */
+}
+
+/* === Estilos del Header === */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem; /* Padding interno (vertical, horizontal) */
+    color: white; /* Color de texto para logo y nav */
+    position: relative; /* Para controlar el apilamiento (z-index) */
+    z-index: 10; /* Asegura que el header esté por encima de la curva */
+    /* Estimamos una altura de ~12vh para calcular el top del contenedor de abajo */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Espacio entre icono y texto del logo */
+}
+
+.logo-img {
+    width: 40px; /* Ancho del icono del logo */
+    height: auto; /* Mantiene proporción */
+}
+
+.logo-text {
+    font-size: 1.5rem; /* Tamaño texto logo */
+    font-weight: bold; /* Negrita */
+    color: white;
+}
+
+/* === Navegación === */
+.nav {
+    display: flex;
+    gap: 2.5rem; /* Espacio entre enlaces de navegación */
+}
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+        text-transform: uppercase; /* MAYÚSCULAS */
+        transition: color 0.2s ease;
+    }
+
+        .nav a:hover {
+            color: #e0faff; /* Color al pasar el mouse */
+        }
+
+/* === Botón Login === */
+.login-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre icono y texto del botón */
+    padding: 0.5rem 1.2rem; /* Padding interno */
+    background: white; /* Fondo blanco */
+    color: #00cfff; /* Texto azul claro (como el gradiente) */
+    border: none;
+    border-radius: 20px; /* Bordes redondeados */
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase; /* MAYÚSCULAS */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+    .login-button:hover {
+        background-color: #f0f0f0; /* Fondo gris claro al pasar el mouse */
+    }
+
+    /* Icono dentro del botón (asegúrate que tu HTML usa FontAwesome o similar) */
+    .login-button i {
+        font-size: 1rem; /* Tamaño del icono */
+    }
+
+/* === Contenedor Principal (no necesita estilos si el hijo es absoluto) === */
+.main {
+    /* Puedes dejarlo vacío o usarlo para otros fines si es necesario */
+    /* width: 100%; */ /* Ocupa todo el ancho */
+}
+
+
+/* === Contenedor Blanco Curvo === */
+.curved-container {
+    position: absolute; /* Posicionamiento absoluto respecto al body */
+    top: 12vh; /* <<< AJUSTE CLAVE: Distancia desde arriba (prueba 10vh, 12vh, 15vh...) */
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    min-height: 88vh; /* <<< AJUSTE CLAVE: Altura mínima (100vh - top) */
+    height: auto; /* Permite que crezca si el contenido es largo */
+    background-color: white; /* Fondo blanco */
+    /* <<< LA CURVA MÁGICA >>> */
+    /* Aumenta mucho el segundo valor (vh) para hacerla más profunda verticalmente */
+    border-top-left-radius: 45vw 75vh; /* <<<<<<< ¡JUEGA CON ESTOS VALORES! (ancho vw, alto vh) */
+
+    z-index: 5; /* Debe estar detrás del header (z-index: 10) */
+    /* Layout interno con Flexbox */
+    display: flex;
+    justify-content: space-around; /* Espacio alrededor de los hijos */
+    align-items: center; /* Centra verticalmente los hijos */
+    flex-wrap: wrap; /* Permite que pasen a la siguiente línea si no caben */
+    padding: 5rem 4rem 4rem 4rem; /* Padding interno (arriba, horiz, abajo) - Aumenta el padding superior */
+    gap: 2rem; /* Espacio entre la burbuja y la descripción */
+}
+
+/* === Burbuja de Información === */
+.info-bubble {
+    width: 280px; /* Ancho de la burbuja */
+    height: 280px; /* Alto de la burbuja (igual al ancho para círculo) */
+    background-color: #e5faff; /* Fondo azul muy claro */
+    border-radius: 50%; /* Círculo perfecto */
+    padding: 2rem; /* Padding interno */
+    text-align: center; /* Texto centrado */
+    display: flex;
+    flex-direction: column; /* Elementos internos en columna */
+    justify-content: center; /* Centrado vertical del contenido interno */
+    align-items: center; /* Centrado horizontal del contenido interno */
+    gap: 1rem; /* Espacio entre icono y texto dentro de la burbuja */
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave opcional */
+}
+
+/* Icono dentro de la burbuja */
+.bubble-icon {
+    width: 75px; /* <<< AJUSTE CLAVE: Tamaño del icono (más grande) */
+    height: auto; /* Mantiene proporción */
+    margin-bottom: 0.5rem; /* Espacio debajo del icono */
+}
+
+/* === Sección de Descripción === */
+.description {
+    max-width: 500px; /* Ancho máximo para el texto */
+}
+
+    .description h2 {
+        color: #00cfff; /* Título en azul claro */
+        font-size: 2rem; /* Tamaño del título */
+        margin-bottom: 1.5rem; /* Espacio debajo del título */
+        font-weight: bold; /* Negrita */
+    }
+
+    .description p {
+        font-size: 1rem; /* Tamaño del párrafo */
+        line-height: 1.6; /* Interlineado */
+        color: #555; /* Color gris oscuro para el párrafo */
+    }

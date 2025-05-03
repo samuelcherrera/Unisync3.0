@@ -238,7 +238,8 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="HtmlViews\asignaturas.html" />
+    <Content Include="HtmlViews\apuntes.html" />
+    <Content Include="HtmlViews\Calificaciones.html" />
     <Content Include="HtmlViews\img\calendario.png" />
     <Content Include="HtmlViews\img\calificacion-de-estrellas.png" />
     <Content Include="HtmlViews\img\correo-electronico.png" />
@@ -252,12 +253,15 @@
     <Content Include="HtmlViews\Iniciar.html" />
     <Content Include="HtmlViews\inicio.html" />
     <Content Include="HtmlViews\Login.html" />
-    <Content Include="HtmlViews\nosotros.html" />
-    <Content Include="HtmlViews\Styles\asignaturas.css" />
+    <Content Include="HtmlViews\saberMas.html" />
+    <Content Include="HtmlViews\asignatura.html" />
+    <Content Include="HtmlViews\Styles\apuntes.css" />
+    <Content Include="HtmlViews\Styles\asignatura.css" />
+    <Content Include="HtmlViews\Styles\Calificaciones.css" />
     <Content Include="HtmlViews\Styles\Iniciar.css" />
     <Content Include="HtmlViews\Styles\Inicio.css" />
     <Content Include="HtmlViews\Styles\Login.css" />
-    <Content Include="HtmlViews\Styles\nosotros.css" />
+    <Content Include="HtmlViews\Styles\saberMas.css" />
     <Content Include="HtmlViews\Styles\register.css" />
     <Content Include="HtmlViews\register.html" />
     <Content Include="Models\UniSyncModel.Context.tt">
@@ -304,6 +308,7 @@
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\custom\asignaturas.js" />
+    <Content Include="Scripts\custom\Calificaciones.js" />
     <Content Include="Scripts\custom\Login.js" />
     <Content Include="Scripts\custom\register.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />

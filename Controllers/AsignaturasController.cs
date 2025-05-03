@@ -10,6 +10,7 @@ using Unisync.Clases;
 
 namespace Super.Controllers
 {
+
     [RoutePrefix("api/Asignatura")]
     //[Authorize] // Puedes habilitar la autorización si es necesario
     public class AsignaturasController : ApiController
@@ -30,14 +31,14 @@ namespace Super.Controllers
             return asignatura.ConsultarXNombreAsignatura(nombre);
         }
 
-        [HttpPost]
+       /* [HttpPost]
         [Route("Insertar")]
         public string Insertar([FromBody] ASIGNATURA asignatura)
         {
             Asignatura AsignaturaClase = new Asignatura();
             AsignaturaClase.asignatura = asignatura;
             return AsignaturaClase.Insertar();
-        }
+        }*/
 
         [HttpPut]
         [Route("Actualizar")]
@@ -64,5 +65,16 @@ namespace Super.Controllers
             Asignatura AsignaturaClase = new Asignatura();
             return AsignaturaClase.EliminarXNombreAsignatura(nombre);
         }
+
+        [HttpPost]
+        [Route("Insertar")]
+        public string Insertar([FromBody] ASIGNATURA asignatura, int usuarioId) // Recibimos el ID del usuario
+        {
+            Asignatura AsignaturaClase = new Asignatura();
+            AsignaturaClase.asignatura = asignatura;
+            return AsignaturaClase.Insertar(usuarioId); // Pasamos el usuarioId para asociarlo
+        }
+
+
     }
 }

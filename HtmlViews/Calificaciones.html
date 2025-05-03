@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>UniSync | Calificaciones</title>
+    <link rel="stylesheet" href="Styles/Calificaciones.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        <h2><span class="color-acento">ASIGNATURA:</span> <span id="nombreAsignatura"></span></h2>
+
+        <div class="estado-panel">
+            <p><strong>ESTADO:</strong> <span id="estado">-</span></p>
+            <p><strong>PORCENTAJE CALIFICADO:</strong> <span id="porcentaje">0%</span></p>
+            <button onclick="calcularPromedio()">CALCULAR PROMEDIO</button>
+            <button onclick="calcularNotaNecesaria()">CALCULAR NOTA PARA APROBAR</button>
+        </div>
+
+        <table class="tabla-notas">
+            <thead>
+                <tr>
+                    <th>NOTA 1</th>
+                    <th>%</th>
+                    <th>NOTA 2</th>
+                    <th>%</th>
+                    <th>NOTA 3</th>
+                    <th>%</th>
+                    <th>NOTA 4</th>
+                    <th>%</th>
+                    <th>NOTA 5</th>
+                    <th>%</th>
+                    <th>NOTA 6</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoNotas">
+                <tr>
+                    <td colspan="12" style="text-align: center;">Aún no has ingresado notas.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="mensaje">
+            <h3>“MENSAJE MOTIVACIONAL”</h3>
+        </div>
+
+        <div class="panel-botones">
+            <button onclick="abrirModal()">AGREGAR NOTAS</button>
+            <button onclick="eliminarNotas()">ELIMINAR NOTAS</button>
+            <button onclick="editarNotas()">EDITAR NOTAS</button>
+            <button id="guardarNotas">✔ GUARDAR</button>
+            <button id="salir">✘ SALIR</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalCalificacion" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <h3>Agregar Calificación</h3>
+            <form id="formCalificacion">
+                <label>Nota:</label>
+                <input type="number" step="0.01" id="nota" required>
+                <label>Porcentaje:</label>
+                <input type="number" step="0.01" id="porcentajeNota" required>
+                <button type="submit">Guardar</button>
+            </form>
+            <p id="mensajeModal"></p>
+        </div>
+    </div>
+
+    <script src="../Scripts/custom/Calificaciones.js"></script>
+</body>
+</html>

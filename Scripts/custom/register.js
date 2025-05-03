@@ -14,16 +14,14 @@
 
         fetch("https://localhost:44334/api/Usuario/Insertar", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuario)
         })
             .then(response => response.text())
             .then(data => {
                 mensajeDiv.innerText = data;
                 form.reset();
-                window.location.href = "Login.html"
+                window.location.href = "Iniciar.html";
             })
             .catch(error => {
                 mensajeDiv.innerText = "Error al guardar: " + error;
