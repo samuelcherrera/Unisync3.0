@@ -9,16 +9,16 @@ namespace UniSync.Clases
 {
     public class Usuario
     {
-        private UNISYNCEntities1 DBUniSync = new UNISYNCEntities1();// objeto de la bd que permite manipular el CRUD de los objetos generados por el entityFramework
+        private UNISYNCEntities1 DBUniSync = new UNISYNCEntities1();
 
-        public USUARIO usuario { get; set; } // objeto de la clase USUARIO que permite manipular los datos del usuario
+        public USUARIO usuario { get; set; } 
 
         public String Insertar()
         {
             try
             {
-                DBUniSync.USUARIOs.Add(usuario); // agg un nuevo empleado a la tabla EMPLEADO (INSERT)
-                DBUniSync.SaveChanges(); // guarda los cambios en la base de datos
+                DBUniSync.USUARIOs.Add(usuario); 
+                DBUniSync.SaveChanges(); 
                 return "Usuario ingresado correctamente " + usuario.NOMBRE;
             }
             catch (Exception ex)
@@ -26,6 +26,12 @@ namespace UniSync.Clases
                 return "error al insertar el usuario " + ex.Message;
             }
 
+        }
+        public USUARIO ConsultarXCorreo(String correo)
+        {
+            
+            USUARIO emp = DBUniSync.USUARIOs.FirstOrDefault(e => e.CORREO == correo);
+            return emp;
         }
 
         public String Actualizar()
@@ -43,13 +49,7 @@ namespace UniSync.Clases
 
 
         }
-        public USUARIO ConsultarXCorreo(String correo)
-        {
-            //EXPRESIONES LAMBDA:funciones anonimas que permiten filtrar los datos de una tabla
-            //FirstOrDefault: devuelve el primer elemento que cumpla con la condicion de la expresion lambda
-            USUARIO emp = DBUniSync.USUARIOs.FirstOrDefault(e => e.CORREO == correo);//consulta el empleado por documento
-            return emp;
-        }
+        
 
         public List<USUARIO> ConsultarTodos()
         {

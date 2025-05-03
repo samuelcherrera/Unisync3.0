@@ -1,75 +1,167 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>UniSync | Calificaciones</title>
-    <link rel="stylesheet" href="Styles/Calificaciones.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniSync - Notas</title>
+    <link rel="stylesheet" href="styles/calificaciones.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-
-    <div class="contenedor-principal">
-        <h2><span class="color-acento">ASIGNATURA:</span> <span id="nombreAsignatura"></span></h2>
-
-        <div class="estado-panel">
-            <p><strong>ESTADO:</strong> <span id="estado">-</span></p>
-            <p><strong>PORCENTAJE CALIFICADO:</strong> <span id="porcentaje">0%</span></p>
-            <button onclick="calcularPromedio()">CALCULAR PROMEDIO</button>
-            <button onclick="calcularNotaNecesaria()">CALCULAR NOTA PARA APROBAR</button>
+    <header class="header">
+        <div class="logo-container">
+            <img src="https://img.icons8.com/ios/50/00d7e6/infinity.png" class="logo-icon" alt="Logo" />
+            <span class="logo-text">UniSync</span>
         </div>
-
-        <table class="tabla-notas">
-            <thead>
-                <tr>
-                    <th>NOTA 1</th>
-                    <th>%</th>
-                    <th>NOTA 2</th>
-                    <th>%</th>
-                    <th>NOTA 3</th>
-                    <th>%</th>
-                    <th>NOTA 4</th>
-                    <th>%</th>
-                    <th>NOTA 5</th>
-                    <th>%</th>
-                    <th>NOTA 6</th>
-                    <th>%</th>
-                </tr>
-            </thead>
-            <tbody id="cuerpoNotas">
-                <tr>
-                    <td colspan="12" style="text-align: center;">Aún no has ingresado notas.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="mensaje">
-            <h3>“MENSAJE MOTIVACIONAL”</h3>
+        <div class="user-icon">
+            <i class="fa-regular fa-user"></i>
         </div>
+    </header>
 
-        <div class="panel-botones">
-            <button onclick="abrirModal()">AGREGAR NOTAS</button>
-            <button onclick="eliminarNotas()">ELIMINAR NOTAS</button>
-            <button onclick="editarNotas()">EDITAR NOTAS</button>
-            <button id="guardarNotas">✔ GUARDAR</button>
-            <button id="salir">✘ SALIR</button>
-        </div>
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="action-buttons">
+                <button class="btn">AGREGAR NOTAS</button>
+                <button class="btn">ELIMINAR NOTAS</button>
+                <button class="btn">EDITAR NOTAS</button>
+            </div>
+            <div class="bottom-buttons">
+                <button class="btn">
+                    <i class="fa-regular fa-square-check"></i></i> GUARDAR
+                </button>
+                <button class="btn">
+                    <i class="fa-regular fa-circle-xmark"></i></i> SALIR
+                </button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="notas-box">
+                <h2 class="asignatura-titulo">
+                    <span class="azul">ASIGNATURA:</span> DISEÑO DE SISTEMAS DE INFORMACIÓN.
+                </h2>
+
+                <div class="estado-box">
+                    <div class="estado-info">
+                        <p><strong>ESTADO:</strong></p>
+                        <p><strong>PORCENTAJE CALIFICADO:<span id="porcentajeCalificado">0%</span></strong></p>
+                    </div>
+                    <div class="estado-botones">
+                        <button class="btn">CALCULAR PROMEDIO</button>
+                        <button class="btn">CALCULAR NOTA PARA APROBAR</button>
+                    </div>
+                </div>
+
+                <table class="tabla-notas">
+                    <thead>
+                        <tr>
+                            <th>NOTA 1</th>
+                            <th>%</th>
+                            <th>NOTA 2</th>
+                            <th>%</th>
+                            <th>NOTA 3</th>
+                            <th>%</th>
+                            <th>NOTA 4</th>
+                            <th>%</th>
+                            <th>NOTA 5</th>
+                            <th>%</th>
+                            <th>NOTA 6</th>
+                            <th>%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mensaje">
+                    <h3>“MENSAJE MOTIVACIONAL”</h3>
+                </div>
+            </div>
+        </main>
     </div>
-
     <!-- Modal -->
-    <div id="modalCalificacion" class="modal">
-        <div class="modal-contenido">
-            <span class="cerrar" onclick="cerrarModal()">&times;</span>
-            <h3>Agregar Calificación</h3>
-            <form id="formCalificacion">
-                <label>Nota:</label>
-                <input type="number" step="0.01" id="nota" required>
-                <label>Porcentaje:</label>
-                <input type="number" step="0.01" id="porcentajeNota" required>
-                <button type="submit">Guardar</button>
-            </form>
-            <p id="mensajeModal"></p>
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+        <div style="background:white; padding:20px; border-radius:10px;">
+            <h3>Agregar Nota</h3>
+            <label>Nota: <input type="number" step="0.1" id="notaInput"></label><br><br>
+            <label>Porcentaje: <input type="number" id="porcentajeInput"></label><br><br>
+            <button onclick="guardarNota()">Guardar</button>
+            <button onclick="cerrarModal()">Cancelar</button>
         </div>
     </div>
+    <script>
+        let notasGuardadas = JSON.parse(localStorage.getItem("notas")) || [];
 
-    <script src="../Scripts/custom/Calificaciones.js"></script>
+        document.querySelectorAll(".action-buttons .btn")[0].addEventListener("click", function () {
+            document.getElementById("modal").style.display = "flex";
+        });
+
+        function actualizarPorcentajeCalificado() {
+            const total = notasGuardadas.reduce((sum, item) => sum + Number(item.porcentaje), 0);
+            document.getElementById("porcentajeCalificado").textContent = total + "%";
+        }
+
+
+        function cerrarModal() {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("notaInput").value = "";
+            document.getElementById("porcentajeInput").value = "";
+        }
+
+        function guardarNota() {
+            const nota = document.getElementById("notaInput").value;
+            const porcentaje = document.getElementById("porcentajeInput").value;
+
+            if (nota === "" || porcentaje === "") {
+                alert("Por favor ingresa ambos campos.");
+                return;
+            }
+
+            if (notasGuardadas.length >= 6) {
+                alert("Ya has ingresado el máximo de 6 notas.");
+                cerrarModal();
+                return;
+            }
+
+            notasGuardadas.push({ nota, porcentaje });
+            localStorage.setItem("notas", JSON.stringify(notasGuardadas));
+
+            actualizarTabla();
+            actualizarPorcentajeCalificado();
+            cerrarModal();
+        }
+
+        function actualizarTabla() {
+            const inputs = document.querySelectorAll(".tabla-notas input");
+            inputs.forEach(input => input.value = ""); // Limpiar
+
+            notasGuardadas.forEach((item, index) => {
+                const i = index * 2;
+                inputs[i].value = item.nota;
+                inputs[i + 1].value = item.porcentaje;
+            });
+        }
+
+        // Al cargar la página
+        window.onload = () => {
+            actualizarTabla();
+            actualizarPorcentajeCalificado();
+        };
+    </script>
+
 </body>
 </html>

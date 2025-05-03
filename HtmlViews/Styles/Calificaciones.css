@@ -1,141 +1,233 @@
-﻿body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f7ff;
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.color-acento {
-    color: #00cfff;
+body, html {
+    height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #fff;
+    overflow: hidden;
 }
 
-.contenedor-principal {
-    max-width: 1000px;
-    margin: 30px auto;
-    background: white;
-    border: 4px solid #00cfff;
+.header {
+    background-color: #00d7e6;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-icon {
+    height: 50px;
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.user-icon {
+    font-size: 28px;
+    color: #2EC1D8;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outline-icon {
+    color: transparent;
+    -webkit-text-stroke: 1.8px #00d7e6;
+    font-size: 24px; /* Aseguramos que el tamaño del ícono sea lo suficientemente grande */
+}
+
+.main-container {
+    display: flex;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 150px; /* Sidebar más pequeño */
+    height: 550px; /* Altura del sidebar reducida */
+    background-color: white;
+    padding: 10px 5px; /* Menos padding para hacerlo más compacto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 10px #00d7e6;
+    border-radius: 16px;
+    margin: 10px;
+    position: relative; /* Cambiar a relativo para evitar que se superponga */
+    align-self: center; /* Centrado dentro de su contenedor */
+}
+
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bottom-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    background-color: #2EC1D8;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 12px;
+    font-size: 14px;
     border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+    .btn:hover {
+        background-color: #26a7ba;
+    }
+
+.content {
+    flex: 1;
     padding: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-h2 {
-    margin-top: 0;
+.notas-box {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 8px #00d7e6;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.asignatura-titulo {
     text-align: center;
+    font-size: 26px;
+    font-weight: bold;
 }
 
-.estado-panel {
-    background: #c9f6ff;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 20px 0;
+.azul {
+    color: #00d7e6;
+}
+
+.estado-box {
+    background-color: #e6fdff;
+    padding: 20px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.estado-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.estado-botones {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-    .estado-panel button {
-        background-color: #00cfff;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 8px;
-        cursor: pointer;
-    }
-
 .tabla-notas {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
-    .tabla-notas th, .tabla-notas td {
-        border: 2px solid #00cfff;
+    .tabla-notas th,
+    .tabla-notas td {
+        border: 2px solid #00d7e6;
         padding: 10px;
         text-align: center;
+        color: #00d7e6; /* Color azul en el texto */
     }
 
-.panel-botones {
-    margin-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-    .panel-botones button {
-        background-color: #00cfff;
-        color: white;
+    .tabla-notas input {
+        width: 100%;
         border: none;
-        padding: 12px 20px;
-        font-weight: bold;
-        border-radius: 10px;
-        cursor: pointer;
+        outline: none;
+        text-align: center;
+        font-size: 16px;
+        font-family: 'Roboto Condensed', sans-serif;
     }
 
 .mensaje {
-    background: #e6f7ff;
-    padding: 15px;
-    margin-top: 20px;
+    background-color: transparent; /* Sin fondo de color */
+    border-radius: 14px;
+    padding: 12px;
     text-align: center;
-    font-size: 1.2em;
-    border: 2px solid #00cfff;
-    border-radius: 10px;
 }
 
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-contenido {
-    background-color: white;
-    margin: 10% auto;
-    padding: 20px;
-    width: 300px;
-    border: 3px solid #00cfff;
-    border-radius: 10px;
-    position: relative;
-}
-
-    .modal-contenido h3 {
-        margin-top: 0;
+    .mensaje h3 {
+        font-size: 20px;
+        font-weight: bold;
     }
 
-    .modal-contenido label {
-        display: block;
-        margin-top: 10px;
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
     }
 
-    .modal-contenido input {
+    .sidebar {
         width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
-    .modal-contenido button {
-        margin-top: 15px;
-        width: 100%;
-        background-color: #00cfff;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 8px;
-        cursor: pointer;
+    .action-buttons, .bottom-buttons {
+        flex-direction: row;
+        gap: 10px;
     }
 
-.cerrar {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
+    .estado-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tabla-notas th, .tabla-notas td {
+        font-size: 14px;
+    }
+
+    .asignatura-titulo {
+        font-size: 20px;
+    }
+
+    .mensaje h3 {
+        font-size: 16px;
+    }
 }

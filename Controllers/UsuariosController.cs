@@ -12,23 +12,8 @@ namespace Super.Controllers
 {
     //EL RoutePrefix ES UNA DIRECTIVA QUE SE DEFINE ANTES DE LA CLASE PARA DEFINIR LA RUTA VASE DE LA API
     [RoutePrefix("api/Usuario")]
-    //[Authorize]
     public class UsuariosController: ApiController
     {
-        //SE DEFINE EL METODO A IMPLEMENTAR (httpGet,httpPost...)
-        [HttpGet]
-        //LUEGO SE DEFINE LA RUTA DEL MOTODO CON Route
-        [Route("ConsultarTodos")]
-        //FINALMENTE SE DEFINE EL METODO QUE SE VA A EJECUTAR
-        public List<USUARIO> ConsultarTodos()
-        {
-            //SE CREA UN OBJETO DE LA clsEmpleado
-            Usuario usuario = new Usuario();
-
-            //SE LLAMA AL METODO ConsultarTodos DE LA CLASE clsEmpleado
-            return usuario.ConsultarTodos();
-        }
-
 
         [HttpGet]
         [Route("ConsultarXCorreo")]
@@ -45,11 +30,26 @@ namespace Super.Controllers
         {
             Usuario Usuario = new Usuario();
 
-            //SE LE ASIGNA EL OBJETO empleado AL OBJETO empleado DE LA CLASE clsEmpleado 
             Usuario.usuario = usuario;
 
             return Usuario.Insertar();
         }
+
+        //SE DEFINE EL METODO A IMPLEMENTAR (httpGet,httpPost...)
+        [HttpGet]
+        //LUEGO SE DEFINE LA RUTA DEL MOTODO CON Route
+        [Route("ConsultarTodos")]
+        //FINALMENTE SE DEFINE EL METODO QUE SE VA A EJECUTAR
+        public List<USUARIO> ConsultarTodos()
+        {
+            //SE CREA UN OBJETO DE LA clsEmpleado
+            Usuario usuario = new Usuario();
+
+            //SE LLAMA AL METODO ConsultarTodos DE LA CLASE clsEmpleado
+            return usuario.ConsultarTodos();
+        }
+
+
 
 
         [HttpPut]

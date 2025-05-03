@@ -62,7 +62,7 @@ function mostrarAsignaturas() {
         <button class="btn">TAREAS</button>
         <button onclick="window.location.href='APUNTES.html'" class="btn btn-primary">
         APUNTES
-        </button>        <button class="btn">CALIFICACIONES</button>
+        </button>        <button onclick="window.location.href='calificaciones.html'" class="btn">CALIFICACIONES</button>
         <button class="btn delete">ELIMINAR ASIGNATURA</button>
       </div>
     `;
