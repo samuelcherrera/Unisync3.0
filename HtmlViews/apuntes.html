@@ -6,6 +6,65 @@
     <title>Apuntes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/apuntes.css" />
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-button {
+            padding: 10px 20px;
+            background-color: #00d7e6;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+            .form-button:hover {
+                background-color: #45a049;
+            }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -21,113 +80,146 @@
     <main class="container">
         <div class="notas-box">
             <div class="top-bar">
-                <button class="btn"> AGREGAR APUNTES</button>
+                <button class="btn" id="openModalBtn">AGREGAR APUNTES</button>
                 <button class="btn filter-btn">
                     <i class="fa-solid fa-filter outline-icon"></i>
                 </button>
             </div>
 
             <div class="nota-list">
-                <!-- Repite este bloque según sea necesario -->
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <div class="nota-item">
-                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
-                    <span class="nota-titulo"><strong>CLASE:</strong> ------------------------------</span>
-                    <div class="buttons">
-                        <button class="btn">MODIFICAR APUNTES</button>
-                        <button class="btn">ELIMINAR APUNTES</button>
-                    </div>
-                </div>
-                <!-- Fin bloque repetible -->
+                <!-- Aquí irían los apuntes listados -->
             </div>
         </div>
     </main>
+
+    <!-- Modal para Agregar Apunte -->
+    <div id="apunteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h2>Agregar Apunte</h2>
+            <form id="apunteForm">
+                <input type="text" id="contenido" class="form-input" placeholder="Contenido del apunte" required />
+                <input type="text" id="etiqueta" class="form-input" placeholder="Etiqueta del apunte" required />
+                <input type="date" id="fecha" class="form-input" required />
+                <button type="submit" class="form-button">Guardar Apunte</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        // Obtener elementos
+        const modal = document.getElementById("apunteModal");
+        const openModalBtn = document.getElementById("openModalBtn");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+        const apunteForm = document.getElementById("apunteForm");
+        const contenidoInput = document.getElementById("contenido");
+        const etiquetaInput = document.getElementById("etiqueta");
+        const fechaInput = document.getElementById("fecha");
+        const notaList = document.querySelector(".nota-list");
+
+        // Función para cargar los apuntes desde localStorage
+        function cargarApuntes() {
+            // Obtener los apuntes del localStorage (si existen)
+            const apuntes = JSON.parse(localStorage.getItem("apuntes")) || [];
+
+            // Limpiar la lista de apuntes para evitar duplicados
+            notaList.innerHTML = '';
+
+            // Agregar los apuntes a la lista
+            apuntes.forEach(apunte => {
+                const notaItem = document.createElement("div");
+                notaItem.classList.add("nota-item");
+
+                // Estructura para mostrar el apunte con el formato deseado
+                notaItem.innerHTML = `
+                    <button class="btn"><i class="fa-solid fa-bars"></i> EXPORTAR</button>
+                    <span class="nota-titulo"><strong>CLASE:</strong> ${apunte.contenido}</span>
+                    <div class="buttons">
+                        <button class="btn">MODIFICAR APUNTES</button>
+                        <button class="btn" onclick="eliminarApunte('${apunte.contenido}')">ELIMINAR APUNTES</button>
+                    </div>
+                `;
+
+                // Agregar el apunte a la lista
+                notaList.appendChild(notaItem);
+            });
+        }
+
+        // Función para agregar un apunte al localStorage
+        function agregarApunte(contenido, etiqueta, fecha) {
+            // Obtener los apuntes existentes
+            const apuntes = JSON.parse(localStorage.getItem("apuntes")) || [];
+
+            // Crear el nuevo apunte
+            const nuevoApunte = {
+                contenido,
+                etiqueta,
+                fecha
+            };
+
+            // Agregar el nuevo apunte al array
+            apuntes.push(nuevoApunte);
+
+            // Guardar los apuntes en el localStorage
+            localStorage.setItem("apuntes", JSON.stringify(apuntes));
+        }
+
+        // Función para eliminar un apunte
+        function eliminarApunte(contenido) {
+            const apuntes = JSON.parse(localStorage.getItem("apuntes")) || [];
+
+            // Filtrar el apunte a eliminar
+            const nuevosApuntes = apuntes.filter(apunte => apunte.contenido !== contenido);
+
+            // Actualizar el localStorage
+            localStorage.setItem("apuntes", JSON.stringify(nuevosApuntes));
+
+            // Recargar los apuntes para actualizar la lista
+            cargarApuntes();
+        }
+
+        // Abrir el modal
+        openModalBtn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Cerrar el modal
+        closeModalBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Cerrar el modal si el usuario hace clic fuera del modal
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Agregar funcionalidad al formulario
+        apunteForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+            // Obtener los valores del formulario
+            const contenido = contenidoInput.value;
+            const etiqueta = etiquetaInput.value;
+            const fecha = fechaInput.value;
+
+            // Guardar el apunte en el localStorage
+            agregarApunte(contenido, etiqueta, fecha);
+
+            // Limpiar el formulario
+            apunteForm.reset();
+
+            // Cerrar el modal después de guardar
+            modal.style.display = "none";
+
+            // Recargar los apuntes para mostrar el nuevo
+            cargarApuntes();
+        });
+
+        // Cargar los apuntes cuando se carga la página
+        window.onload = cargarApuntes;
+    </script>
 </body>
 </html>

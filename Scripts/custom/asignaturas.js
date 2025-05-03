@@ -1,4 +1,6 @@
-﻿// Obtener elementos del DOM
+﻿//localStorage.removeItem("asignaturas");
+
+// Obtener elementos del DOM
 const openModalBtn = document.getElementById("openModalBtn");
 const modal = document.getElementById("modal");
 const closeModal = document.getElementById("closeModal");
@@ -59,7 +61,7 @@ function mostrarAsignaturas() {
       <div class="buttons">
         <button class="btn">TAREAS</button>
         <button onclick="window.location.href='APUNTES.html'" class="btn btn-primary">
-        Apuntes
+        APUNTES
         </button>        <button class="btn">CALIFICACIONES</button>
         <button class="btn delete">ELIMINAR ASIGNATURA</button>
       </div>
